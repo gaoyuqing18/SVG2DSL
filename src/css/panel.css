@@ -42,3 +42,19 @@
 #tool_text_on_path {
   display: none !important;
 }
+
+#model-input-container {
+  margin-top: 10px;
+}
+
+#model-input {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 5px;
+}
+
+#reset-input,
+#call-model {
+  font-size: 12px;
+  margin-right: 5px;
+}
