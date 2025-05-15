@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const elementType = el.tagName.toLowerCase();
       const attrs = el.attributes;
       const id = el.getAttribute('id') || '';
-      const title = el.querySelector('title')?.textContent || '';
+      const title = el.getAttribute('title') || '';
       const label = title || id || elementType;
 
       const getAttr = (name, def) => attrs.getNamedItem(name)?.value || def;
