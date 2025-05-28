@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     const diffJson = runDiffExample(originSvg, svgString)
     try {
         // 发送请求到服务器
-        var response = await fetch('http://localhost:6006/export_dsl', {
+        var response = await fetch('http://39.106.255.236:8080/export_dsl', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

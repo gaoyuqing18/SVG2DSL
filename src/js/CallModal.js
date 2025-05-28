@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
       loadingIndicator.style.display = 'block';
       try {
           // 发送请求到服务器
-          var response = await fetch('http://localhost:6006/modify_svg', {
+          var response = await fetch('http://39.106.255.236:8080/modify_svg', {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json'
