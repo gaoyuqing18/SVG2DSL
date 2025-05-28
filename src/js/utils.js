@@ -1,5 +1,27 @@
 const utils = {};
-
+utils.downloadFile = function(blob, fileName) {
+  // 1. 创建 FileReader 读取 Blob 内容
+  const reader = new FileReader();
+  
+  // 2. 读取完成后生成 data:URL
+  reader.onloadend = function() {
+    const dataUrl = reader.result; // 格式如: data:application/pdf;base64,JVBERi0xLjcKCg...
+    
+    // 3. 创建下载链接并触发下载
+    const a = document.createElement('a');
+    a.href = dataUrl;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  };
+  
+  // 4. 开始读取 Blob 为 DataURL
+  reader.readAsDataURL(blob);
+}
+utils.isEmptyObject = function(obj) {
+  return obj != null && typeof obj === 'object' && Object.keys(obj).length === 0;
+}
 utils.findGetParameter = function(parameterName) {
     var result = null,
         tmp = [];

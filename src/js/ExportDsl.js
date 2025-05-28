@@ -10,13 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const dslContent = svgToDsl(svgString);
     const blob = new Blob([dslContent], { type: 'text/plain' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = 'dsl.text';
-    link.style.display = 'none';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    utils.downloadFile(blob, 'dsl.text')
   });
 
   function svgToDsl(svgContent) {

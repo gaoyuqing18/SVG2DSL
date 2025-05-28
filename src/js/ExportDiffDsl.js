@@ -329,6 +329,10 @@ document.addEventListener('DOMContentLoaded', async function() {
     console.log("svgString", svgString)
 
     const diffJson = runDiffExample(originSvg, svgString)
+    if (utils.isEmptyObject(diffJson)) {
+      alert('未检测到内容变更');
+      return;
+    }
     try {
         // 发送请求到服务器
         var response = await fetch('http://39.106.255.236:8080/export_dsl', {
@@ -343,14 +347,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         var result = await response.json();
         var diff_dsl = result.diff_dsl;
         const blob = new Blob([diff_dsl], { type: 'text/plain' });
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = 'dsl.text';
-        link.style.display = 'none';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-
+        utils.downloadFile(blob, 'dsl.text')
     } catch (error) {
         console.error('请求出错:', error);
     }
