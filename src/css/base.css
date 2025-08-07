@@ -128,6 +128,6 @@
   --x16: 64px;
   --mono-font: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
   --ui-font: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-  --panel-width: calc(var(--x10)*2*2*2 + var(--x1));
+  --panel-width: 450px;
   --transition-duration: 200ms;
   --transition:  all var(--transition-duration) ease;

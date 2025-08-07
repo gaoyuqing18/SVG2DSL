@@ -242,8 +242,12 @@
     </div>
     <div id="model-input-container">
       <textarea id="model-input" placeholder="输入修改内容 点击确定按钮 调用模型修改 SVG"></textarea>
-      <button id="reset-input">重置</button>
-      <button id="call-model">确定</button>
+      <div class="suggest-message-list" id="suggest" style="display: none;">
+        <div class="suggest-message ">页面已高亮显示匹配的 SVG 元素，这是您想要编辑的内容吗？</div>
+        <div class="suggest-message" id="suggest-error">不是此元素 ❌</div>
+        <div class="suggest-message" id="suggest-yes">是此元素 ✅</div>
+        <div class="suggest-message" id="suggest-yes-call">是此元素并执行编辑 ➡️</div>
+      </div>
   </div>
   </div>
   
