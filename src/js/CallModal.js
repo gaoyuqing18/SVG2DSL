@@ -95,7 +95,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     // 是此元素
     document.getElementById('suggest-yes').addEventListener('click', function () {
-        highlightElements(target_ids, false)
         showSuggest(false)
     });
     // 是此元素并执行编辑
