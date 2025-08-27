@@ -818,6 +818,43 @@
   <script type="text/javascript" src="js/ExportDsl.js"></script>
   <script type="text/javascript" src="js/ExportDiffDsl.js"></script>
   <script type="text/javascript" src="js/start.js"></script>
+  <script>
+   function loadSvgString(str, callback) {
+    var success = svgCanvas.setSvgString(str) !== false;
+    callback = callback || $.noop;
+    if(success) {
+      callback(true);
+      editor.saveCanvas();
+      state.set("canvasTitle", svgCanvas.getDocumentTitle());
+    } else {
+      $.alert("Error: Unable to load SVG data", function() {
+        callback(false);
+      });
+    }
+  }
+  window.onload = function() {
+    window.addEventListener('message', function (e) {  // 监听 message 事件
+      console.log(e, '收到postmessage消息');
+      const a = `<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+        <g>
+          <title>Layer 1</title>
+          <g id="svg_1">
+          <rect fill="#fff" stroke="#000" x="68" y="115" width="131" height="74" id="svg_6"/>
+          <rect fill="#fff" stroke="#000" x="267" y="115" width="131" height="74" id="svg_10"/>
+          <rect fill="#fff" stroke="#000" x="68" y="236" width="131" height="74" id="svg_11"/>
+          <rect fill="#fff" stroke="#000" x="267" y="236" width="131" height="74" id="svg_12"/>
+          <rect fill="#fff" stroke="#000" x="68" y="357" width="131" height="74" id="svg_14"/>
+          <rect fill="#fff" stroke="#000" x="267" y="357" width="131" height="74" id="svg_15"/>
+          </g>
+        </g>
+        </svg>`
+        loadSvgString(a);
+        const originSvg = svgCanvas.getSvgString();
+        localStorage.setItem("originSvg", originSvg);
+        editor.canvas.update(true);
+    });
+  }
+</script>
   <!-- endbuild -->
 </body>
 </html>
