@@ -243,6 +243,16 @@ function compareAttributes(oldEl, newEl, changes) {
   allAttrs.forEach(attrName => {
       const oldValue = oldEl.getAttribute(attrName);
       const newValue = newEl.getAttribute(attrName);
+
+      // 过滤：type=attr-add 且 attribute=style 且 value=cursor: text; 的变更
+      const isTargetStyleAdd = (
+        oldValue === null && newValue !== null &&  // 新增属性的条件
+        attrName === "style" &&                   // 属性名是 style
+        newValue.trim() === "cursor: text;"       // 属性值是 cursor: text;
+      );
+      if (isTargetStyleAdd) {
+        return; // 跳过该变更，不添加到列表
+      }
       
       if (oldValue === null && newValue !== null) {
           changes.push({
