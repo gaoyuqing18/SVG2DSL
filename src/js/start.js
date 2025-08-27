@@ -62,3 +62,24 @@ state.set("canvasTitle", svgCanvas.getDocumentTitle());
 
 document.body.classList.remove("loading");
 document.getElementById("svgcanvas").removeAttribute("title");
+function loadSvgString(str, callback) {
+    var success = svgCanvas.setSvgString(str) !== false;
+    callback = callback || $.noop;
+    if(success) {
+      callback(true);
+      editor.saveCanvas();
+      state.set("canvasTitle", svgCanvas.getDocumentTitle());
+    } else {
+      $.alert("Error: Unable to load SVG data", function() {
+        callback(false);
+      });
+    }
+  }
+  window.addEventListener('message', function (e) {  // 监听 message 事件
+    if (e.origin === 'http://app.ai4se.com') {
+        loadSvgString(e.data);
+        const originSvg = svgCanvas.getSvgString();
+        localStorage.setItem("originSvg", originSvg);
+        editor.canvas.update(true);
+    }
+  });
