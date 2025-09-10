@@ -238,25 +238,25 @@
         <div class="caret"></div>
         <label id="resolution_label">Custom</label>
       </div>
-
     </div>
     <div class="model-input-container">
-      <h4 class="model-title">大模型修改区</h4>
-      <div class="suggest-tips">页面已高亮显示匹配的 SVG 元素，这是您想要编辑的内容吗？</div>
+      <h4 class="model-title">大模型修改</h4>
+      <div class="suggest-tips suggest-preview hidden">页面已高亮显示匹配的 SVG 元素，这是您想要编辑的内容吗？</div>
+      <div class="suggest-tips suggest-yes hidden">已确认目标 SVG 元素～现在你可以继续对该元素进行更细致的编辑啦，比如通过鼠标拖拽调整其位置、大小，或者在左侧输入框补充更具体的修改指令后再次点击‘预览’哦～</div>
+      <div class="suggest-tips suggest-error hidden">请你重新在输入框中补充更精准的描述，比如说明元素的形状、颜色、位置等特征，然后点击‘预览’，大模型会重新为你匹配目标 SVG 元素～</div>
+      <div class="suggest-tips suggest-call hidden">已为你确认并执行对目标 SVG 元素的编辑～现在你可以查看修改后的效果啦～如果觉得还需要调整，你可以继续在输入框输入新的修改内容，或者直接用鼠标对 SVG 进行微调～</div>
+       <div class="suggest-tips suggest-back hidden">已为你撤回上一次的 SVG 编辑操作～现在 SVG 已回到修改前的样子，你可以重新输入修改内容，点击‘预览’，再次进行编辑尝试～</div>
       <div class="panel">
-        <textarea id="model-input" class="panel-left" placeholder="输入修改内容 点击确定按钮 调用模型修改 SVG"></textarea>
+        <textarea id="model-input" class="panel-left" placeholder="输入修改内容 点击预览按钮 调用模型修改 SVG"></textarea>
         <div class="panel-right">
-          <div class="suggest-message" id="suggest-yes">✅ 是此元素</div>
-          <div class="suggest-message" id="suggest-error">❌ 不是此元素</div>
+          <div class="suggest-btn hidden" id="suggest-yes">✅ 是此元素</div>
+          <div class="suggest-btn hidden" id="suggest-error">❌ 不是此元素</div>
+          <div class="suggest-btn btn-preview" id="to-preview">预览</div>
         </div>
       </div>
-      <div class="suggest-message-list" id="suggest" style="display: none;">
-        <div class="suggest-message" id="suggest-yes-call">撤回</div>
-        <div class="suggest-message" id="suggest-yes-call">是此元素并执行编辑</div>
-      </div>
-      <div class="model-bottom" id="suggest">
-        <div class="suggest-message btn-back" id="suggest-yes-call">撤回</div>
-        <div class="suggest-message btn-yes" id="suggest-yes-call">是此元素并执行编辑</div>
+      <div class="model-bottom">
+        <div class="suggest-btn btn-back hidden" id="suggest-back">撤回</div>
+        <div class="suggest-btn btn-yes hidden" id="suggest-yes-call">是此元素并执行编辑</div>
       </div>
     </div>
   </div>

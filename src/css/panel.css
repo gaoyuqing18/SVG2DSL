@@ -46,6 +46,7 @@
   font-size: 18px;
   color: #fff;
   text-align: left;
+  margin-bottom: 12px !important;
 }
 .model-input-container {
   margin-top: 10px;
@@ -55,8 +56,9 @@
   text-align: center;
   color: var(--accent7);
   padding: 10px;
-  width: 100%;
+  width: 94%;
   height: 300px;
+  border-radius: 8px;
   position: relative;
   z-index: 2;
 }
@@ -83,17 +85,10 @@
   font-size: 12px;
   margin-right: 5px;
 }
-.suggest-message-list {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px;
-  width: 100%;
-}
 .suggest-tips {
   font-size: 14px;
-  color: #fff;
-  margin: 12px 0;
+  color: #F59A23;
+  margin-bottom: 12px;
   text-align: left;
 }
 .panel {
@@ -116,7 +111,7 @@
   justify-content: space-around;
   flex-direction: row;
 }
-.suggest-message {
+.suggest-btn {
   background: black;
   color: #fff;
   margin-bottom: 8px;
@@ -135,8 +130,9 @@
   color: #fff;
   border: none;
 }
-.btn-yes {
-  background: #1AE5A4;
+.btn-preview, .btn-yes {
+  font-size: 13px;
+  background: linear-gradient(135deg, #02A7F0 0%, #4361ee 100%);
   border: none;
   color: #fff;
 }
@@ -171,11 +167,9 @@
     stroke-width: 1.5px;
   }
 }
-.show-suggest {
-  /* transform: translateY(0); */
+.show {
   display: flex !important;
 }
-.hidden-suggest {
-  transform: translateY(10px);
+.hidden {
   display: none !important;
 }
