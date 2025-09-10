@@ -240,15 +240,25 @@
       </div>
 
     </div>
-    <div id="model-input-container">
-      <textarea id="model-input" placeholder="输入修改内容 点击确定按钮 调用模型修改 SVG"></textarea>
-      <div class="suggest-message-list" id="suggest" style="display: none;">
-        <div class="suggest-tips">页面已高亮显示匹配的 SVG 元素，这是您想要编辑的内容吗？</div>
-        <div class="suggest-message" id="suggest-error">不是此元素 ❌</div>
-        <div class="suggest-message" id="suggest-yes">是此元素 ✅</div>
-        <div class="suggest-message" id="suggest-yes-call">是此元素并执行编辑 ➡️</div>
+    <div class="model-input-container">
+      <h4 class="model-title">大模型修改区</h4>
+      <div class="suggest-tips">页面已高亮显示匹配的 SVG 元素，这是您想要编辑的内容吗？</div>
+      <div class="panel">
+        <textarea id="model-input" class="panel-left" placeholder="输入修改内容 点击确定按钮 调用模型修改 SVG"></textarea>
+        <div class="panel-right">
+          <div class="suggest-message" id="suggest-yes">✅ 是此元素</div>
+          <div class="suggest-message" id="suggest-error">❌ 不是此元素</div>
+        </div>
       </div>
-  </div>
+      <div class="suggest-message-list" id="suggest" style="display: none;">
+        <div class="suggest-message" id="suggest-yes-call">撤回</div>
+        <div class="suggest-message" id="suggest-yes-call">是此元素并执行编辑</div>
+      </div>
+      <div class="model-bottom" id="suggest">
+        <div class="suggest-message btn-back" id="suggest-yes-call">撤回</div>
+        <div class="suggest-message btn-yes" id="suggest-yes-call">是此元素并执行编辑</div>
+      </div>
+    </div>
   </div>
   
   <div id="rect_panel" class="context_panel">
