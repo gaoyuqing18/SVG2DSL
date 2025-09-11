@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
         showLoading(true)
         try {
             // 发送请求到服务器
-            var response = await fetch('http://39.106.255.236:8080/get_target_ids', {
+            var response = await fetch('http://39.106.255.236:8000/get_target_ids', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
       loadingIndicator.style.display = 'block';
       try {
           // 发送请求到服务器
-          var response = await fetch('http://39.106.255.236:8080/apply_modifications', {
+          var response = await fetch('http://39.106.255.236:8000/apply_modifications', {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json'
