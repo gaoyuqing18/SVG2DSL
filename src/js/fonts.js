@@ -22,9 +22,9 @@ function populateFonts(fonts){
     `;
   }
 
-  $("#font_family_dropdown").append(options);
-  $("head").append('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>');
-  $("head").append(fontLinks);
+  // $("#font_family_dropdown").append(options);
+  // $("head").append('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>');
+  // $("head").append(fontLinks);
 };
 
 const fonts = {

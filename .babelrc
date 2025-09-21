@@ -1,0 +1,19 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": [
+            "last 2 Safari versions",  
+            "iOS >= 10",                  
+            "ie >= 11"                    
+          ]
+        },
+        "useBuiltIns": "usage",  
+        "corejs": 3,             
+        "modules": false         
+      }
+    ]
+  ]
+}
