@@ -320,18 +320,23 @@ body.dragging .draginput .angle {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%); /* 新增 */
   width: var(--x4);
   height: var(--x4);
   border-radius: var(--x4);
   z-index: 10;
   border: solid var(--accent7) 2px;
   border-top-color: transparent;
-  animation: spin 1s linear infinite;
+  -webkit-animation: spin 1s linear infinite; /* 新增 */
 }
 
 @keyframes spin {
   0%   { transform: translate(-50%, -50%) rotate(0);      }
   100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  0%   { -webkit-transform: translate(-50%, -50%) rotate(0);      }
+  100% { -webkit-transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 

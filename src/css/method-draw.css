@@ -263,9 +263,9 @@ input[readonly=readonly]:focus {
   box-shadow: none;
 }
 
-#color_canvas_tools, #fill_bg, #stroke_bg {
+/* #color_canvas_tools, #fill_bg, #stroke_bg {
   background: var(--z15) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMAQMAAABsu86kAAAAA3NCSVQICAjb4U/gAAAABlBMVEXu7u7///8o06qaAAAACXBIWXMAAAsSAAALEgHS3X78AAAAFXRFWHRDcmVhdGlvbiBUaW1lADcvMjIvMTL7FNdCAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M1cbXjNgAAABFJREFUCJljYP7AgIb+MKAhAM8/C5vWL6zSAAAAAElFTkSuQmCC) top left repeat;
-}
+} */
 
 #color_canvas_tools {
   width: 60px;

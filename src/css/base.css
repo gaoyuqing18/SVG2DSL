@@ -1,4 +1,4 @@
-:root, .inverted-undo {          /* red */        /* yellow */     /* green */
+:root, .inverted-undo {
 --z0: #111827;  --a0: #2a1c26; --b0: #2a2429;  --c0: #162730; 
 --z1: #1e2433;  --a1: #421f24; --b1: #45322a;  --c1: #1c3b3b; 
 --z2: #2b313f;  --a2: #5a2122; --b2: #60422b;  --c2: #1f4f47; 
@@ -131,3 +131,4 @@
   --panel-width: 450px;
   --transition-duration: 200ms;
   --transition:  all var(--transition-duration) ease;
+}
